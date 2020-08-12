@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Second form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="form-style" id="form-container">
+        <h2 class="main-titel">Create your account</h2>
+        <form id="register" name="register">
+            <label for="name">First name</label><br>
+            <input type="text" name="name" id="name" placeholder='type here'><br>
+            <label for="second-name">Second name</label><br>
+            <input type="text" name="second-name" id="second-name" placeholder='type here '><br>
+            <label for="email">Email address <span id='notification'></span></label><br>
+            <input type="text" name="email" id="email" placeholder='enter email'><br>
+            <label for="man"><input value="man" type="radio" id='man' name='gender' checked>      Man</label>
+            <label for="woman"><input value="woman" type="radio" id="woman" name='gender'>    Woman</label><br>
+            <label>Position</label><br>
+            <select id="position" name="position">
+                <option selected disabled>choise</option>
+                <option value="front-end">Front-end</option>
+                <option value="back-end">Back-end</option>
+                <option value="qc\qa">QC\QA</option>
+            </select><br>
+            <label for="terms"><input type="checkbox" id="terms"> I agree all statements in Terms of service</label><br>
+            <span id="alert"></span>
+            <input id="submit" onsubmit="return false;" type="button" value="Sign Up">
+            
+
+        </form>
+    </div>
+    <div id="personal-window" class="form-style">
+        <div class = 'main-titel'>
+            <span class="img"></span>
+        </div>
+        <h3 id="user-name">Ivan Ivanov</h3>
+        <h5 id="user-email">ivanov@gmail.com</h5>
+        <h6 id="user-position">Front-end</h6>
+        <hr>
+        <button id='sign-out'>Sign Out</button>
+        <div class="footer">
+            
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>

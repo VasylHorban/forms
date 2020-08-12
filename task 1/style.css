@@ -1,0 +1,28 @@
+body{
+    font-family: sans-serif;
+}
+form {
+    margin: 0 auto;
+    width: 70%;
+}
+.move-form{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    box-sizing: border-box
+}
+form input {
+    width: 100%;
+}
+input[type=button]{
+    background: #34d034;
+    color: #fff;
+    border: none
+}
+input[type=button]:hover{
+    background: #17b217;
+    cursor: pointer;
+}
+form .move-form input{
+    width: 30%;
+}
