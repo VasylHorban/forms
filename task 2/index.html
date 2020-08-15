@@ -17,25 +17,25 @@
             <input type="text" name="second-name" id="second-name" placeholder='type here '><br>
             <label for="email">Email address <span id='notification'></span></label><br>
             <input type="text" name="email" id="email" placeholder='enter email'><br>
-            <label for="man"><input value="man" type="radio" id='man' name='gender' checked>      Man</label>
-            <label for="woman"><input value="woman" type="radio" id="woman" name='gender'>    Woman</label><br>
+            <label for="man"><input value="man" type="radio" id='man' name='gender' checked> Man</label>
+            <label for="woman"><input value="woman" type="radio" id="woman" name='gender'> Woman</label><br>
             <label>Position</label><br>
             <select id="position" name="position">
-                <option selected disabled>choise</option>
+                <option selected disabled>Choose...</option>
                 <option value="front-end">Front-end</option>
                 <option value="back-end">Back-end</option>
                 <option value="qc\qa">QC\QA</option>
             </select><br>
-            <label for="terms"><input type="checkbox" id="terms"> I agree all statements in Terms of service</label><br>
+            <label for="terms"><input type="checkbox" id="terms" > I agree all statements in Terms of service</label><br>
             <span id="alert"></span>
             <input id="submit" onsubmit="return false;" type="button" value="Sign Up">
-            
+
 
         </form>
     </div>
     <div id="personal-window" class="form-style">
-        <div class = 'main-titel'>
-            <span class="img"></span>
+        <div class='main-titel'>
+            <img id="avatar" class="img">
         </div>
         <h3 id="user-name">Ivan Ivanov</h3>
         <h5 id="user-email">ivanov@gmail.com</h5>
@@ -43,7 +43,15 @@
         <hr>
         <button id='sign-out'>Sign Out</button>
         <div class="footer">
-            
+            <a href="https://www.facebook.com">
+                <img src="https://image.flaticon.com/icons/svg/733/733605.svg" alt="">
+            </a>
+            <a href="https://www.github.com">
+                <img src="https://image.flaticon.com/icons/svg/733/733609.svg" alt="">
+            </a>
+            <a href="https://www.linkedin.com">
+                <img src="https://image.flaticon.com/icons/svg/733/733617.svg" alt="">
+            </a>
         </div>
     </div>
     <script src="main.js"></script>

@@ -20,7 +20,7 @@ class User {
         if (bool != undefined) {
             this.permission = bool
         }
-        console.log(this.permission)
+
     }
     isCorrectEmail(email) {
         let isCorrect = false;
@@ -39,8 +39,10 @@ class User {
 }
 const personalWindow = (function () {
     const window = document.querySelector('#personal-window');
+    const avatarLinks = ['https://image.flaticon.com/icons/svg/146/146035.svg', 'https://image.flaticon.com/icons/svg/146/146036.svg']
 
     function fillWindow(user) {
+        document.querySelector('#avatar').src = checkGender(user)
         document.querySelector('#user-name').innerHTML = user.name + ' ' + user.secondName;
         document.querySelector('#user-email').innerHTML = user.email;
         document.querySelector('#user-position').innerHTML = user.position;
@@ -55,6 +57,16 @@ const personalWindow = (function () {
     function out() {
         window.style.display = 'none'
         formModule.addEvent()
+    }
+
+    function checkGender(user) {
+        let result = ''
+        if (user.gender == 'man') {
+            result = avatarLinks[0];
+        } else {
+            result = avatarLinks[1]
+        }
+        return result;
     }
     return {
         fillWindow: fillWindow
@@ -83,7 +95,6 @@ const formModule = (function () {
         })
         forms.email.addEventListener('input', e => {
             if (!user.isCorrectEmail(forms.email.value)) {
-                console.log('invalid email')
                 document.querySelector('#notification').innerHTML = '*invalide email';
             } else {
                 document.querySelector('#notification').innerHTML = '';
@@ -92,8 +103,8 @@ const formModule = (function () {
     }
 
     function submit() {
-        console.log('top')
         document.querySelector('#form-container').style.display = 'none'
+        clear();
         personalWindow.fillWindow(user);
     }
 
@@ -105,7 +116,15 @@ const formModule = (function () {
         user.setEmail(forms.email.value)
         mainCheck()
     }
+    
+    function clear(){
+        forms.name.value = ''
+        forms['second-name'].value = ''
+        forms.email.value = ''
+        forms.position.value = 'Choose...'
 
+    }
+    
     function mainCheck() {
         if (!user.isEmptyProp() && user.permission && user.isCorrectEmail(user.email)) {
             document.querySelector('#alert').innerHTML = '';
@@ -120,3 +139,4 @@ const formModule = (function () {
 })();
 
 formModule.addEvent()
+
